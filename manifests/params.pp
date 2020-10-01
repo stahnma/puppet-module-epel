@@ -8,7 +8,7 @@ class epel::params {
   #   the most specific declaration of proxy.
   $proxy = 'absent'
 
-  if $facts['os']['name'] == 'Amazon' and $facts['os']['release']['major'] == '2'  {
+  if $facts['os']['name'] == 'Amazon' and $facts['os']['release']['major'] == '2' {
     # Amazon Linux 2 is equivalent of Enterprise Linux 7 so we use that version for epel
     # https://aws.amazon.com/premiumsupport/knowledge-center/ec2-enable-epel/
     $os_maj_release = '7'
@@ -73,4 +73,11 @@ class epel::params {
   $epel_testing_debuginfo_gpgcheck        = '1'
   $epel_testing_debuginfo_repo_gpgcheck   = '0'
   $epel_testing_debuginfo_metalink        = "https://mirrors.fedoraproject.org/metalink?repo=testing-debug-epel${os_maj_release}&arch=\$basearch"
+  if versioncmp($os_maj_release, '8') >= 0 {
+    $epel_playground_debug_managed = true
+    $epel_playground_managed = true
+  } else {
+    $epel_playground_debug_managed = false
+    $epel_playground_managed = false
+  }
 }
