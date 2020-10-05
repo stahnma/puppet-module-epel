@@ -6,6 +6,8 @@ require 'classes/shared_debuginfo'
 require 'classes/shared_testing'
 require 'classes/shared_testing_source'
 require 'classes/shared_testing_debuginfo'
+require 'classes/shared_playground'
+require 'classes/shared_playground_debug'
 
 describe 'epel' do
   test_on = {
@@ -98,6 +100,8 @@ describe 'epel' do
         it_behaves_like :epel_testing_8
         it_behaves_like :epel_testing_source_8
         it_behaves_like :epel_testing_debuginfo_8
+        it_behaves_like :epel_playground_8
+        it_behaves_like :epel_playground_debug_8
         context 'epel_baseurl => https://example.com/epel/8/x86_64' do
           let(:params) do
             {

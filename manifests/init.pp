@@ -98,8 +98,34 @@ class epel (
   $epel_testing_debuginfo_includepkgs     = undef,
   $epel_testing_debuginfo_sslclientkey    = undef,
   $epel_testing_debuginfo_sslclientcert   = undef,
-  Boolean $epel_gpg_managed               = true,
-  $os_maj_release                         = $epel::params::os_maj_release,
+  String $epel_playground_mirrorlist      = "https://mirrors.fedoraproject.org/metalink?repo=playground-epel8&arch=\$basearch",
+  String $epel_playground_baseurl         = 'absent',
+  String $epel_playground_failovermethod  = 'priority',
+  String $epel_playground_proxy           = 'absent',
+  String $epel_playground_enabled         = '0',
+  String $epel_playground_gpgcheck        = '1',
+  String $epel_playground_repo_gpgcheck   = '0',
+  String $epel_playground_metalink        = "https://mirrors.fedoraproject.org/metalink?repo=playground-debug-epel8&arch=\$basearch",
+  Boolean $epel_playground_managed        = $epel::params::epel_playground_managed,
+  Optional[String] $epel_playground_exclude       = undef,
+  Optional[String] $epel_playground_includepkgs   = undef,
+  Optional[String] $epel_playground_sslclientkey  = undef,
+  Optional[String] $epel_playground_sslclientcert = undef,
+  String $epel_playground_debug_mirrorlist        = "https://mirrors.fedoraproject.org/metalink?repo=playground-debug-epel8&arch=\$basearch",
+  String $epel_playground_debug_baseurl           = 'absent',
+  String $epel_playground_debug_failovermethod    = 'priority',
+  String $epel_playground_debug_proxy             = 'absent',
+  String $epel_playground_debug_enabled           = '0',
+  String $epel_playground_debug_gpgcheck          = '1',
+  String $epel_playground_debug_repo_gpgcheck     = '0',
+  String $epel_playground_debug_metalink          = "https://mirrors.fedoraproject.org/metalink?repo=playground-debug-epel8&arch=\$basearch",
+  Boolean $epel_playground_debug_managed          = $epel::params::epel_playground_debug_managed,
+  Optional[String] $epel_playground_debug_exclude       = undef,
+  Optional[String] $epel_playground_debug_includepkgs   = undef,
+  Optional[String] $epel_playground_debug_sslclientkey  = undef,
+  Optional[String] $epel_playground_debug_sslclientcert = undef,
+  Boolean $epel_gpg_managed                             = true,
+  $os_maj_release                                       = $epel::params::os_maj_release,
 ) inherits epel::params {
   if $facts['os']['family'] == 'RedHat' and $facts['os']['name'] != 'Fedora' {
   if $epel_testing_managed {
@@ -269,7 +295,60 @@ class epel (
       Epel::Rpm_gpg_key["EPEL-${os_maj_release}"] -> Yumrepo['epel-source']
     }
   }
+  if $epel_playground_managed {
+    yumrepo { 'epel-playground':
+      # lint:ignore:selector_inside_resource
+      mirrorlist     => $epel_playground_baseurl ? {
+        'absent' => $epel_playground_mirrorlist,
+        default  => 'absent',
+      },
+      # lint:endignore
+      baseurl        => $epel_playground_baseurl,
+      failovermethod => $epel_playground_failovermethod,
+      proxy          => $epel_playground_proxy,
+      enabled        => $epel_playground_enabled,
+      gpgcheck       => $epel_playground_gpgcheck,
+      repo_gpgcheck  => $epel_playground_repo_gpgcheck,
+      gpgkey         => "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-${os_maj_release}",
+      descr          => "Extra Packages for Enterprise Linux ${os_maj_release} - \$basearch - Playground",
+      metalink       => $epel_playground_metalink,
+      exclude        => $epel_playground_exclude,
+      includepkgs    => $epel_playground_includepkgs,
+      sslclientkey   => $epel_playground_sslclientkey,
+      sslclientcert  => $epel_playground_sslclientcert,
+    }
 
+    if $epel_gpg_managed {
+      Epel::Rpm_gpg_key["EPEL-${os_maj_release}"] -> Yumrepo['epel-playground']
+    }
+  }
+  if $epel_playground_debug_managed {
+    yumrepo { 'epel-playground-debug':
+      # lint:ignore:selector_inside_resource
+      mirrorlist     => $epel_playground_debug_baseurl ? {
+        'absent' => $epel_playground_debug_mirrorlist,
+        default  => 'absent',
+      },
+      # lint:endignore
+      baseurl        => $epel_playground_debug_baseurl,
+      failovermethod => $epel_playground_debug_failovermethod,
+      proxy          => $epel_playground_debug_proxy,
+      enabled        => $epel_playground_debug_enabled,
+      gpgcheck       => $epel_playground_debug_gpgcheck,
+      repo_gpgcheck  => $epel_playground_debug_repo_gpgcheck,
+      gpgkey         => "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-${os_maj_release}",
+      descr          => "Extra Packages for Enterprise Linux ${os_maj_release} - \$basearch - Playground Debug",
+      metalink       => $epel_playground_debug_metalink,
+      exclude        => $epel_playground_debug_exclude,
+      includepkgs    => $epel_playground_debug_includepkgs,
+      sslclientkey   => $epel_playground_debug_sslclientkey,
+      sslclientcert  => $epel_playground_debug_sslclientcert,
+    }
+
+    if $epel_gpg_managed {
+      Epel::Rpm_gpg_key["EPEL-${os_maj_release}"] -> Yumrepo['epel-playground-debug']
+    }
+  }
   if $epel_gpg_managed {
     file { "/etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-${os_maj_release}":
       ensure  => present,
@@ -279,11 +358,10 @@ class epel (
       content => file("epel/RPM-GPG-KEY-EPEL-${os_maj_release}"),
     }
 
-    epel::rpm_gpg_key{ "EPEL-${os_maj_release}":
+    epel::rpm_gpg_key { "EPEL-${os_maj_release}":
       path   => "/etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-${os_maj_release}",
     }
   }
-
   } else {
     notice ("Your operating system ${facts['os']['name']} will not have the EPEL repository applied")
   }
