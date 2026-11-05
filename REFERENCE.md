@@ -50,83 +50,83 @@ The following parameters are available in the `epel` class:
 * [`epel_testing_debuginfo_managed`](#-epel--epel_testing_debuginfo_managed)
 * [`epel_gpg_managed`](#-epel--epel_gpg_managed)
 * [`epel_mirrorlist`](#-epel--epel_mirrorlist)
+* [`epel_metalink`](#-epel--epel_metalink)
+* [`epel_testing_mirrorlist`](#-epel--epel_testing_mirrorlist)
+* [`epel_testing_metalink`](#-epel--epel_testing_metalink)
+* [`epel_source_mirrorlist`](#-epel--epel_source_mirrorlist)
+* [`epel_source_metalink`](#-epel--epel_source_metalink)
+* [`epel_debuginfo_mirrorlist`](#-epel--epel_debuginfo_mirrorlist)
+* [`epel_debuginfo_metalink`](#-epel--epel_debuginfo_metalink)
+* [`epel_testing_source_mirrorlist`](#-epel--epel_testing_source_mirrorlist)
+* [`epel_testing_source_metalink`](#-epel--epel_testing_source_metalink)
+* [`epel_testing_debuginfo_mirrorlist`](#-epel--epel_testing_debuginfo_mirrorlist)
+* [`epel_testing_debuginfo_metalink`](#-epel--epel_testing_debuginfo_metalink)
 * [`epel_baseurl`](#-epel--epel_baseurl)
 * [`epel_failovermethod`](#-epel--epel_failovermethod)
 * [`epel_proxy`](#-epel--epel_proxy)
 * [`epel_enabled`](#-epel--epel_enabled)
 * [`epel_gpgcheck`](#-epel--epel_gpgcheck)
 * [`epel_repo_gpgcheck`](#-epel--epel_repo_gpgcheck)
-* [`epel_metalink`](#-epel--epel_metalink)
 * [`epel_exclude`](#-epel--epel_exclude)
 * [`epel_includepkgs`](#-epel--epel_includepkgs)
 * [`epel_sslclientkey`](#-epel--epel_sslclientkey)
 * [`epel_sslclientcert`](#-epel--epel_sslclientcert)
 * [`epel_username`](#-epel--epel_username)
 * [`epel_password`](#-epel--epel_password)
-* [`epel_testing_mirrorlist`](#-epel--epel_testing_mirrorlist)
 * [`epel_testing_baseurl`](#-epel--epel_testing_baseurl)
 * [`epel_testing_failovermethod`](#-epel--epel_testing_failovermethod)
 * [`epel_testing_proxy`](#-epel--epel_testing_proxy)
 * [`epel_testing_enabled`](#-epel--epel_testing_enabled)
 * [`epel_testing_gpgcheck`](#-epel--epel_testing_gpgcheck)
 * [`epel_testing_repo_gpgcheck`](#-epel--epel_testing_repo_gpgcheck)
-* [`epel_testing_metalink`](#-epel--epel_testing_metalink)
 * [`epel_testing_exclude`](#-epel--epel_testing_exclude)
 * [`epel_testing_includepkgs`](#-epel--epel_testing_includepkgs)
 * [`epel_testing_sslclientkey`](#-epel--epel_testing_sslclientkey)
 * [`epel_testing_sslclientcert`](#-epel--epel_testing_sslclientcert)
 * [`epel_testing_username`](#-epel--epel_testing_username)
 * [`epel_testing_password`](#-epel--epel_testing_password)
-* [`epel_source_mirrorlist`](#-epel--epel_source_mirrorlist)
 * [`epel_source_baseurl`](#-epel--epel_source_baseurl)
 * [`epel_source_failovermethod`](#-epel--epel_source_failovermethod)
 * [`epel_source_proxy`](#-epel--epel_source_proxy)
 * [`epel_source_enabled`](#-epel--epel_source_enabled)
 * [`epel_source_gpgcheck`](#-epel--epel_source_gpgcheck)
 * [`epel_source_repo_gpgcheck`](#-epel--epel_source_repo_gpgcheck)
-* [`epel_source_metalink`](#-epel--epel_source_metalink)
 * [`epel_source_exclude`](#-epel--epel_source_exclude)
 * [`epel_source_includepkgs`](#-epel--epel_source_includepkgs)
 * [`epel_source_sslclientkey`](#-epel--epel_source_sslclientkey)
 * [`epel_source_sslclientcert`](#-epel--epel_source_sslclientcert)
 * [`epel_source_username`](#-epel--epel_source_username)
 * [`epel_source_password`](#-epel--epel_source_password)
-* [`epel_debuginfo_mirrorlist`](#-epel--epel_debuginfo_mirrorlist)
 * [`epel_debuginfo_baseurl`](#-epel--epel_debuginfo_baseurl)
 * [`epel_debuginfo_failovermethod`](#-epel--epel_debuginfo_failovermethod)
 * [`epel_debuginfo_proxy`](#-epel--epel_debuginfo_proxy)
 * [`epel_debuginfo_enabled`](#-epel--epel_debuginfo_enabled)
 * [`epel_debuginfo_gpgcheck`](#-epel--epel_debuginfo_gpgcheck)
 * [`epel_debuginfo_repo_gpgcheck`](#-epel--epel_debuginfo_repo_gpgcheck)
-* [`epel_debuginfo_metalink`](#-epel--epel_debuginfo_metalink)
 * [`epel_debuginfo_exclude`](#-epel--epel_debuginfo_exclude)
 * [`epel_debuginfo_includepkgs`](#-epel--epel_debuginfo_includepkgs)
 * [`epel_debuginfo_sslclientkey`](#-epel--epel_debuginfo_sslclientkey)
 * [`epel_debuginfo_sslclientcert`](#-epel--epel_debuginfo_sslclientcert)
 * [`epel_debuginfo_username`](#-epel--epel_debuginfo_username)
 * [`epel_debuginfo_password`](#-epel--epel_debuginfo_password)
-* [`epel_testing_source_mirrorlist`](#-epel--epel_testing_source_mirrorlist)
 * [`epel_testing_source_baseurl`](#-epel--epel_testing_source_baseurl)
 * [`epel_testing_source_failovermethod`](#-epel--epel_testing_source_failovermethod)
 * [`epel_testing_source_proxy`](#-epel--epel_testing_source_proxy)
 * [`epel_testing_source_enabled`](#-epel--epel_testing_source_enabled)
 * [`epel_testing_source_gpgcheck`](#-epel--epel_testing_source_gpgcheck)
 * [`epel_testing_source_repo_gpgcheck`](#-epel--epel_testing_source_repo_gpgcheck)
-* [`epel_testing_source_metalink`](#-epel--epel_testing_source_metalink)
 * [`epel_testing_source_exclude`](#-epel--epel_testing_source_exclude)
 * [`epel_testing_source_includepkgs`](#-epel--epel_testing_source_includepkgs)
 * [`epel_testing_source_sslclientkey`](#-epel--epel_testing_source_sslclientkey)
 * [`epel_testing_source_sslclientcert`](#-epel--epel_testing_source_sslclientcert)
 * [`epel_testing_source_username`](#-epel--epel_testing_source_username)
 * [`epel_testing_source_password`](#-epel--epel_testing_source_password)
-* [`epel_testing_debuginfo_mirrorlist`](#-epel--epel_testing_debuginfo_mirrorlist)
 * [`epel_testing_debuginfo_baseurl`](#-epel--epel_testing_debuginfo_baseurl)
 * [`epel_testing_debuginfo_failovermethod`](#-epel--epel_testing_debuginfo_failovermethod)
 * [`epel_testing_debuginfo_proxy`](#-epel--epel_testing_debuginfo_proxy)
 * [`epel_testing_debuginfo_enabled`](#-epel--epel_testing_debuginfo_enabled)
 * [`epel_testing_debuginfo_gpgcheck`](#-epel--epel_testing_debuginfo_gpgcheck)
 * [`epel_testing_debuginfo_repo_gpgcheck`](#-epel--epel_testing_debuginfo_repo_gpgcheck)
-* [`epel_testing_debuginfo_metalink`](#-epel--epel_testing_debuginfo_metalink)
 * [`epel_testing_debuginfo_exclude`](#-epel--epel_testing_debuginfo_exclude)
 * [`epel_testing_debuginfo_includepkgs`](#-epel--epel_testing_debuginfo_includepkgs)
 * [`epel_testing_debuginfo_sslclientkey`](#-epel--epel_testing_debuginfo_sslclientkey)
@@ -209,11 +209,101 @@ Default value: `true`
 
 ##### <a name="-epel--epel_mirrorlist"></a>`epel_mirrorlist`
 
-Data type: `Any`
+Data type: `String[1]`
 
+Mirrorlist URL of the main EPEL repository. Defaults (from module hiera
+data) to the Fedora metalink for the OS major release; on EL10 the
+per-minor-release metalink is selected from the `os.release.minor` fact.
 
+Default value: `'https://mirrors.fedoraproject.org/metalink?repo=epel-%{facts.os.release.major}&arch=$basearch'`
 
-Default value: `"https://mirrors.fedoraproject.org/metalink?repo=epel-${facts['os']['release']['major']}&arch=\$basearch"`
+##### <a name="-epel--epel_metalink"></a>`epel_metalink`
+
+Data type: `String[1]`
+
+Metalink URL of the main EPEL repository. See `epel_mirrorlist`.
+
+Default value: `'https://mirrors.fedoraproject.org/metalink?repo=epel-%{facts.os.release.major}&arch=$basearch'`
+
+##### <a name="-epel--epel_testing_mirrorlist"></a>`epel_testing_mirrorlist`
+
+Data type: `String[1]`
+
+Mirrorlist URL of the `epel-testing` repository. See `epel_mirrorlist`.
+
+Default value: `'https://mirrors.fedoraproject.org/metalink?repo=testing-epel%{facts.os.release.major}&arch=$basearch'`
+
+##### <a name="-epel--epel_testing_metalink"></a>`epel_testing_metalink`
+
+Data type: `String[1]`
+
+Metalink URL of the `epel-testing` repository. See `epel_mirrorlist`.
+
+Default value: `'https://mirrors.fedoraproject.org/metalink?repo=testing-epel%{facts.os.release.major}&arch=$basearch'`
+
+##### <a name="-epel--epel_source_mirrorlist"></a>`epel_source_mirrorlist`
+
+Data type: `String[1]`
+
+Mirrorlist URL of the `epel-source` repository. See `epel_mirrorlist`.
+
+Default value: `'https://mirrors.fedoraproject.org/metalink?repo=epel-source-%{facts.os.release.major}&arch=$basearch'`
+
+##### <a name="-epel--epel_source_metalink"></a>`epel_source_metalink`
+
+Data type: `String[1]`
+
+Metalink URL of the `epel-source` repository. See `epel_mirrorlist`.
+
+Default value: `'https://mirrors.fedoraproject.org/metalink?repo=epel-source-%{facts.os.release.major}&arch=$basearch'`
+
+##### <a name="-epel--epel_debuginfo_mirrorlist"></a>`epel_debuginfo_mirrorlist`
+
+Data type: `String[1]`
+
+Mirrorlist URL of the `epel-debuginfo` repository. See `epel_mirrorlist`.
+
+Default value: `'https://mirrors.fedoraproject.org/metalink?repo=epel-debug-%{facts.os.release.major}&arch=$basearch'`
+
+##### <a name="-epel--epel_debuginfo_metalink"></a>`epel_debuginfo_metalink`
+
+Data type: `String[1]`
+
+Metalink URL of the `epel-debuginfo` repository. See `epel_mirrorlist`.
+
+Default value: `'https://mirrors.fedoraproject.org/metalink?repo=epel-debug-%{facts.os.release.major}&arch=$basearch'`
+
+##### <a name="-epel--epel_testing_source_mirrorlist"></a>`epel_testing_source_mirrorlist`
+
+Data type: `String[1]`
+
+Mirrorlist URL of the `epel-testing-source` repository. See `epel_mirrorlist`.
+
+Default value: `'https://mirrors.fedoraproject.org/metalink?repo=testing-source-epel%{facts.os.release.major}&arch=$basearch'`
+
+##### <a name="-epel--epel_testing_source_metalink"></a>`epel_testing_source_metalink`
+
+Data type: `String[1]`
+
+Metalink URL of the `epel-testing-source` repository. See `epel_mirrorlist`.
+
+Default value: `'https://mirrors.fedoraproject.org/metalink?repo=testing-source-epel%{facts.os.release.major}&arch=$basearch'`
+
+##### <a name="-epel--epel_testing_debuginfo_mirrorlist"></a>`epel_testing_debuginfo_mirrorlist`
+
+Data type: `String[1]`
+
+Mirrorlist URL of the `epel-testing-debuginfo` repository. See `epel_mirrorlist`.
+
+Default value: `'https://mirrors.fedoraproject.org/metalink?repo=testing-debug-epel%{facts.os.release.major}&arch=$basearch'`
+
+##### <a name="-epel--epel_testing_debuginfo_metalink"></a>`epel_testing_debuginfo_metalink`
+
+Data type: `String[1]`
+
+Metalink URL of the `epel-testing-debuginfo` repository. See `epel_mirrorlist`.
+
+Default value: `'https://mirrors.fedoraproject.org/metalink?repo=testing-debug-epel%{facts.os.release.major}&arch=$basearch'`
 
 ##### <a name="-epel--epel_baseurl"></a>`epel_baseurl`
 
@@ -263,14 +353,6 @@ Data type: `Any`
 
 Default value: `'0'`
 
-##### <a name="-epel--epel_metalink"></a>`epel_metalink`
-
-Data type: `Any`
-
-
-
-Default value: `"https://mirrors.fedoraproject.org/metalink?repo=epel-${facts['os']['release']['major']}&arch=\$basearch"`
-
 ##### <a name="-epel--epel_exclude"></a>`epel_exclude`
 
 Data type: `Any`
@@ -318,14 +400,6 @@ Data type: `Optional[String[1]]`
 
 
 Default value: `undef`
-
-##### <a name="-epel--epel_testing_mirrorlist"></a>`epel_testing_mirrorlist`
-
-Data type: `Any`
-
-
-
-Default value: `"https://mirrors.fedoraproject.org/metalink?repo=testing-epel${facts['os']['release']['major']}&arch=\$basearch"`
 
 ##### <a name="-epel--epel_testing_baseurl"></a>`epel_testing_baseurl`
 
@@ -375,14 +449,6 @@ Data type: `Any`
 
 Default value: `'0'`
 
-##### <a name="-epel--epel_testing_metalink"></a>`epel_testing_metalink`
-
-Data type: `Any`
-
-
-
-Default value: `"https://mirrors.fedoraproject.org/metalink?repo=testing-epel${facts['os']['release']['major']}&arch=\$basearch"`
-
 ##### <a name="-epel--epel_testing_exclude"></a>`epel_testing_exclude`
 
 Data type: `Any`
@@ -430,14 +496,6 @@ Data type: `Optional[String[1]]`
 
 
 Default value: `undef`
-
-##### <a name="-epel--epel_source_mirrorlist"></a>`epel_source_mirrorlist`
-
-Data type: `Any`
-
-
-
-Default value: `"https://mirrors.fedoraproject.org/metalink?repo=epel-source-${facts['os']['release']['major']}&arch=\$basearch"`
 
 ##### <a name="-epel--epel_source_baseurl"></a>`epel_source_baseurl`
 
@@ -487,14 +545,6 @@ Data type: `Any`
 
 Default value: `'0'`
 
-##### <a name="-epel--epel_source_metalink"></a>`epel_source_metalink`
-
-Data type: `Any`
-
-
-
-Default value: `"https://mirrors.fedoraproject.org/metalink?repo=epel-source-${facts['os']['release']['major']}&arch=\$basearch"`
-
 ##### <a name="-epel--epel_source_exclude"></a>`epel_source_exclude`
 
 Data type: `Any`
@@ -542,14 +592,6 @@ Data type: `Optional[String[1]]`
 
 
 Default value: `undef`
-
-##### <a name="-epel--epel_debuginfo_mirrorlist"></a>`epel_debuginfo_mirrorlist`
-
-Data type: `Any`
-
-
-
-Default value: `"https://mirrors.fedoraproject.org/metalink?repo=epel-debug-${facts['os']['release']['major']}&arch=\$basearch"`
 
 ##### <a name="-epel--epel_debuginfo_baseurl"></a>`epel_debuginfo_baseurl`
 
@@ -599,14 +641,6 @@ Data type: `Any`
 
 Default value: `'0'`
 
-##### <a name="-epel--epel_debuginfo_metalink"></a>`epel_debuginfo_metalink`
-
-Data type: `Any`
-
-
-
-Default value: `"https://mirrors.fedoraproject.org/metalink?repo=epel-debug-${facts['os']['release']['major']}&arch=\$basearch"`
-
 ##### <a name="-epel--epel_debuginfo_exclude"></a>`epel_debuginfo_exclude`
 
 Data type: `Any`
@@ -654,14 +688,6 @@ Data type: `Optional[String[1]]`
 
 
 Default value: `undef`
-
-##### <a name="-epel--epel_testing_source_mirrorlist"></a>`epel_testing_source_mirrorlist`
-
-Data type: `Any`
-
-
-
-Default value: `"https://mirrors.fedoraproject.org/metalink?repo=testing-source-epel${facts['os']['release']['major']}&arch=\$basearch"`
 
 ##### <a name="-epel--epel_testing_source_baseurl"></a>`epel_testing_source_baseurl`
 
@@ -711,14 +737,6 @@ Data type: `Any`
 
 Default value: `'0'`
 
-##### <a name="-epel--epel_testing_source_metalink"></a>`epel_testing_source_metalink`
-
-Data type: `Any`
-
-
-
-Default value: `"https://mirrors.fedoraproject.org/metalink?repo=testing-source-epel${facts['os']['release']['major']}&arch=\$basearch"`
-
 ##### <a name="-epel--epel_testing_source_exclude"></a>`epel_testing_source_exclude`
 
 Data type: `Any`
@@ -767,14 +785,6 @@ Data type: `Optional[String[1]]`
 
 Default value: `undef`
 
-##### <a name="-epel--epel_testing_debuginfo_mirrorlist"></a>`epel_testing_debuginfo_mirrorlist`
-
-Data type: `Any`
-
-
-
-Default value: `"https://mirrors.fedoraproject.org/metalink?repo=testing-debug-epel${facts['os']['release']['major']}&arch=\$basearch"`
-
 ##### <a name="-epel--epel_testing_debuginfo_baseurl"></a>`epel_testing_debuginfo_baseurl`
 
 Data type: `Any`
@@ -822,14 +832,6 @@ Data type: `Any`
 
 
 Default value: `'0'`
-
-##### <a name="-epel--epel_testing_debuginfo_metalink"></a>`epel_testing_debuginfo_metalink`
-
-Data type: `Any`
-
-
-
-Default value: `"https://mirrors.fedoraproject.org/metalink?repo=testing-debug-epel${facts['os']['release']['major']}&arch=\$basearch"`
 
 ##### <a name="-epel--epel_testing_debuginfo_exclude"></a>`epel_testing_debuginfo_exclude`
 
@@ -900,4 +902,3 @@ Alias of `Enum['absent', 'priority', 'roundrobin']`
 A yum repository proxy
 
 Alias of `Variant[Regexp['.+'], Enum['absent']]`
-
